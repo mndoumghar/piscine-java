@@ -1,9 +1,8 @@
 public class DoOp {
 
     public static String operate(String[] args) {
-        if (args.length != 3) {
-            throw new IllegalArgumentException("Expected format: <num1> <operator> <num2>");
-        }
+        if (args.length != 3) {return "Error";}
+       
 
         int num1 = Atoi(args[0].trim());
         String operation = args[1];
@@ -21,18 +20,18 @@ public class DoOp {
 
             case "/":
                 if (num2 == 0) {
-                   return "0";
+                   return "Error";
                 }
                 return Itoa(num1 / num2);
 
             case "%":
                 if (num2 == 0) {
-                     return "0";
+                     return "Error";
                 }
                 return Itoa(num1 % num2);
 
             default:
-                throw new IllegalArgumentException("Invalid operator: " + operation);
+                return "Error";
         }
     }
 
@@ -54,7 +53,7 @@ public class DoOp {
             int digit = c - '0';
 
             if (digit < 0 || digit > 9) {
-                throw new NumberFormatException("Invalid character: " + c);
+                return 0;
             }
 
             res = res * 10 + digit;
