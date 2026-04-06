@@ -2,15 +2,13 @@ import java.io.*;
 
 public class CatInFile {
     public static void cat(String[] args) throws IOException {
-        if (args.length == 0) {
-            return;
+        if (args.length == 0) return;
+        try (FileOutputStream out = new FileOutputStream(args[0])) {
+            byte[] buf = new byte[4096];
+            int n;
+            while ((n = System.in.read(buf)) != -1) {
+                out.write(buf, 0, n);
+            }
         }
-        FileOutputStream reader = new FileOutputStream(args[0]);
-        byte[] buffer = new byte[4096];
-        int x;
-        while ((x = System.in.read(buffer)) != -1) {
-            System.out.write(buffer,0,x);
-        }
-        reader.close();
     }
 }
