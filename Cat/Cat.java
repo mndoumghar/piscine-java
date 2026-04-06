@@ -9,9 +9,9 @@ public class Cat {
         }
 
         BufferedReader reader = new BufferedReader(new FileReader(args[0]));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
+        int line;
+        while ((line = reader.read()) != -1) {
+            System.out.print((char)line);
         }
         reader.close();
     }
