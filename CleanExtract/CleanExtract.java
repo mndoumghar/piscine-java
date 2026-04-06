@@ -8,7 +8,7 @@ public class CleanExtract {
         for (String word : parts) {
 
             String  res = word.trim();
-            if (res.startsWith(".") && res.endsWith(".")) {
+            if (res.startsWith(".") && res.endsWith(".") &&  res.length() > 1 ) {
                 result += res.substring(1, res.length() -1)+ " ";
             } else if (res.contains(".")) {
                 int findpoint = res.indexOf(".");
