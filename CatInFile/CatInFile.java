@@ -6,7 +6,7 @@ public class CatInFile {
             return;
         }
         FileOutputStream reader = new FileOutputStream(args[0]);
-        byte[] buffer = new byte[1000];
+        byte[] buffer = new byte[4096];
         int x;
         while ((x = System.in.read(buffer)) != -1) {
             System.out.write(buffer,0,x);
