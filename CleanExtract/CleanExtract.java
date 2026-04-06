@@ -25,6 +25,6 @@ public class CleanExtract {
 
         
         
-       return result;
+       return result.trim();
     }
 }
