@@ -27,6 +27,6 @@ public class CleanExtract {
         }
 
      
-       return result.trim();
+       return result.trim().replaceAll("\\s+", " ");
     }
 }
