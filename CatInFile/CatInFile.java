@@ -5,11 +5,10 @@ public class CatInFile {
         if (args.length == 0) {
             return;
         }
-
-        FileInputStream reader = new FileInputStream(args[0]);
+        FileOutputStream reader = new FileOutputStream(args[0]);
         byte[] buffer = new byte[1000];
         int x;
-        while ((x = reader.read(buffer)) != -1) {
+        while ((x = System.in.read(buffer)) != -1) {
             System.out.write(buffer,0,x);
         }
         reader.close();
