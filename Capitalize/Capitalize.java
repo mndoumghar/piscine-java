@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class Capitalize {
     public static void capitalize(String[] args) throws IOException {
@@ -9,26 +11,14 @@ public class Capitalize {
             BufferedWriter writer = new BufferedWriter(new FileWriter(args[1]))
         ) {
             String line;
+
             while ((line = reader.readLine()) != null) {
-                StringBuilder result = new StringBuilder();
-                boolean boo = true;
+                String result = Arrays.stream(line.trim().split("\\s+"))
+                        .map(word -> word.isEmpty() ? word :
+                                Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase())
+                        .collect(Collectors.joining(" "));
 
-                for (char c : line.toCharArray()) {
-                    if (Character.isWhitespace(c)) {
-                        result.append(c);
-                        boo = true;
-                    } else {
-                        if (boo && Character.isLetter(c)) {
-                            result.append(Character.toUpperCase(c));
-                            boo = false;
-                        } else {
-                            result.append(c);
-                            boo = false;
-                        }
-                    }
-                }
-
-                writer.write(result.toString());
+                writer.write(result);
                 writer.newLine();
             }
         }
