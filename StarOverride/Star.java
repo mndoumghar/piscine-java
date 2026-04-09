@@ -14,17 +14,18 @@ public class Star extends CelestialObject {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this.getClass() != o.getClass() || o == null) return false;
-        Star star = (Star) o;
-        return (Double.compare(star.magnitude, this.magnitude) == 0 &&
-                Double.compare(star.getX(), this.getX()) == 0 &&
-                Double.compare(star.getY(), this.getY()) == 0 &&
-                Double.compare(star.getZ(), this.getZ()) == 0 &&
-                (star.getName().equals(this.getName()))
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
-        );
-    }
+    Star star = (Star) o;
+
+    return Double.compare(star.magnitude, this.magnitude) == 0 &&
+           Double.compare(star.getX(), this.getX()) == 0 &&
+           Double.compare(star.getY(), this.getY()) == 0 &&
+           Double.compare(star.getZ(), this.getZ()) == 0 &&
+           Objects.equals(star.getName(), this.getName());
+}
 
     @Override
     public int hashCode() {
@@ -43,5 +44,5 @@ public class Star extends CelestialObject {
     public String toString() {
         return String.format("%s shines at the %.3f magnitude", getName(), getMagnitude());
     }
-
+a
 }
