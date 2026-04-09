@@ -16,7 +16,7 @@ public class Star extends CelestialObject {
     @Override
 public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (o == null || this.getClass() != o.getClass()) return false;
 
     Star star = (Star) o;
 
@@ -24,12 +24,13 @@ public boolean equals(Object o) {
            Double.compare(star.getX(), this.getX()) == 0 &&
            Double.compare(star.getY(), this.getY()) == 0 &&
            Double.compare(star.getZ(), this.getZ()) == 0 &&
-           Objects.equals(star.getName(), this.getName());
+           Objects.equals(star.getName(), this.getName())
+           && star != null;
 }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getX(), getY(), getZ(), this.magnitude);
+        return Objects.hash(super.hashCode(), this.magnitude);
     }
 
     public double getMagnitude() {
