@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class CelestialObject {
+public class CelestialObject  {
     public double x;
     public double y;
     public double z;
@@ -56,12 +56,12 @@ public class CelestialObject {
     public static double getDistanceBetweenInKm(CelestialObject obj1 ,CelestialObject  obj2) {
             return Math.sqrt(Math.pow((obj2.x - obj1.x), 2) + Math.pow((obj2.y - obj1.y), 2) + Math.pow((obj2.z - obj1.z), 2)) * CelestialObject.KM_IN_ONE_AU;
     }
-    
+
 
     public String toString() {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)",getName(), getX(),getY(),getZ());
     }
-
+    
     public boolean equals(CelestialObject obj) {
         if (obj == null) {
             return false;
