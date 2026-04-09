@@ -12,21 +12,17 @@ public class Star extends CelestialObject {
 
     }
     
-     public boolean equals(Star obj) {
-        if (obj == null) {
-            return false;
-        }
-        return obj.getMagnitude() == magnitude;
-    }
+    
 
 
     public double getMagnitude() {
-        return this.magnitude;
+        return magnitude;
     }
 
     public void setMagnitude(double magnitude) {
         this.magnitude = magnitude;
     }
+    @Override
      public String toString() {
         return String.format("%s shines at the %.3f magnitude",getName(), getMagnitude());
     }
