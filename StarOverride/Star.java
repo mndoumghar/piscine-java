@@ -13,7 +13,16 @@ public class Star extends CelestialObject {
     }
     
     
-
+    @Override
+    public boolean equals(Object o) {
+        if (this==o) return true;
+        if (o ==null || getClass() != o.getClass()) return false;
+        return true;
+        }
+    @Override
+    public int hashCode() {
+        return Double.hashCode(magnitude);
+    }
 
     public double getMagnitude() {
         return magnitude;

@@ -61,6 +61,7 @@ public class CelestialObject  {
     public String toString() {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)",getName(), getX(),getY(),getZ());
     }
+   
     
     public boolean equals(CelestialObject obj) {
         if (obj == null) {
