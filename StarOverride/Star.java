@@ -17,21 +17,25 @@ public class Star extends CelestialObject {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof Star))
-            return false;
-        if (!super.equals(o))
+        if (this.getClass() != o.getClass())
             return false;
         Star star = (Star) o;
-        return Double.compare(star.magnitude, magnitude) == 0;
+        return (Double.compare(star.magnitude, this.magnitude) == 0 &&
+                Double.compare(star.getX(), this.getX()) == 0 &&
+                Double.compare(star.getY(), this.getY()) == 0 &&
+                Double.compare(star.getZ(), this.getZ()) == 0 &&
+                (star.getName().equals(this.getName()))
+
+        );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getX(), getY(), getZ(), magnitude);
+        return Objects.hash(getName(), getX(), getY(), getZ(), this.magnitude);
     }
 
     public double getMagnitude() {
-        return magnitude;
+        return this.magnitude;
     }
 
     public void setMagnitude(double magnitude) {
