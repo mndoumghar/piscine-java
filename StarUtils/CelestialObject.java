@@ -56,8 +56,10 @@ public class CelestialObject {
     }
 
     public boolean equals(CelestialObject obj) {
-        return obj.x == x && obj.y == y && obj.z == z;
-
+        if(obj == null) {
+            return false;
+        }
+        return obj.x == x && obj.y==y && obj.z==z;
     }
 
     @Override
