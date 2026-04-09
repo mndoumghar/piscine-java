@@ -22,7 +22,7 @@ public class Star extends CelestialObject {
         }
     @Override
     public int hashCode() {
-        return Objects.hash(getMagnitude());
+        return Objects.hash(magnitude);
     }
 
     public double getMagnitude() {
