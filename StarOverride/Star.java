@@ -15,10 +15,7 @@ public class Star extends CelestialObject {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (this.getClass() != o.getClass())
-            return false;
+        if (this.getClass() != o.getClass() || o == null) return false;
         Star star = (Star) o;
         return (Double.compare(star.magnitude, this.magnitude) == 0 &&
                 Double.compare(star.getX(), this.getX()) == 0 &&
