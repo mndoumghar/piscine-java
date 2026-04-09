@@ -52,8 +52,7 @@ public class CelestialObject {
     }
 
     public String toString() {
-        return "Terre is positioned at (" + String.format("%.3f", this.x) + ", " + String.format("%.3f", this.y) + ", "
-                + String.format("%.3f", this.z) + ")";
+        return String.format("%s is positioned at (%.3f, %.3f, %.3f)",getName(), getX(),getY(),getZ());
     }
 
     public boolean equals(CelestialObject obj) {
