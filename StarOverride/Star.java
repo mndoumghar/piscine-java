@@ -13,14 +13,18 @@ public class Star extends CelestialObject {
 
     }
 
-   @Override
-public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof Star)) return false;
-    if (!super.equals(o)) return false;
-    Star star = (Star) o;
-    return Double.compare(star.magnitude, magnitude) == 0;
-}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Star))
+            return false;
+        if (!super.equals(o))
+            return false;
+
+        Star star = (Star) o;
+        return Double.compare(star.magnitude, magnitude) == 0;
+    }
 
     @Override
     public int hashCode() {
