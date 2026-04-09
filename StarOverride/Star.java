@@ -44,5 +44,5 @@ public boolean equals(Object o) {
     public String toString() {
         return String.format("%s shines at the %.3f magnitude", getName(), getMagnitude());
     }
-a
+
 }
