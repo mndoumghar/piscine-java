@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Star extends CelestialObject {
     private double magnitude;
@@ -21,7 +22,7 @@ public class Star extends CelestialObject {
         }
     @Override
     public int hashCode() {
-        return Double.hashCode(magnitude);
+        return Objects.hash(getMagnitude());
     }
 
     public double getMagnitude() {
