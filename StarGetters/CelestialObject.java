@@ -1,9 +1,9 @@
 public class CelestialObject {
-    public double x;
-    public double y;
-    public double z;
-    public String name;
-    public CelestialObject(String name,double x,double y,double z) {
+    private double x;
+    private double y;
+    private double z;
+    private String name;
+    private CelestialObject(String name,double x,double y,double z) {
         this.name =name;
         this.x= x;
         this.y = y;
