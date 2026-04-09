@@ -14,6 +14,40 @@ public class CelestialObject {
     }
 
     public CelestialObject() {
+        this.name = "Soleil";
+
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getZ() {
+        return z;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String toString() {
@@ -25,10 +59,11 @@ public class CelestialObject {
         return obj.x == x && obj.y == y && obj.z == z;
 
     }
+
     @Override
-    public  int hashCode() {
-        
-        return Objects.hash(name, x,y,z);
+    public int hashCode() {
+
+        return Objects.hash(getName(), getX(), getY(), getZ());
     }
-   
+
 }
