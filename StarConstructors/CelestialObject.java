@@ -10,6 +10,7 @@ public class CelestialObject {
         this.z = z;
     }
     public CelestialObject() {
+        this.name = "Soleil";
         
     }
     
