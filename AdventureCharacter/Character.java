@@ -21,13 +21,16 @@ public class Character {
 
     @Override
     public String toString() {
-        if (getCurrentHealth()<=0) {
+        if (getCurrentHealth()==0) {
             return getName()+" : KO";
         }
         return getName()+" : "+getCurrentHealth()+ "/" +getMaxHealth();
     }
     public void takeDamage(int amount) {
         this.currentHealth -= amount ;
+        if (this.currentHealth < 0) {
+            this.currentHealth=0;
+        }
 
     } 
     public void attack(Character obj) {
@@ -35,4 +38,20 @@ public class Character {
     }
       
 
+
+    public static void main(String[] args) {
+        Character aragorn = new Character("Aragorn", 20);
+        Character uruk = new Character("Uruk", 5);
+        
+        System.out.println(aragorn.toString());
+        System.out.println(uruk.toString());
+        
+        aragorn.attack(uruk);
+
+        System.out.println(uruk.toString());
+        
+        aragorn.takeDamage(12);
+
+        System.out.println(aragorn.toString());
+    }
 }
